@@ -9,7 +9,12 @@ riwayat-penghuni/
 ````
 
 ---
+## ⚙️ default account
 
+```bash
+email: admin@example.com
+password: password123
+```
 ## ⚙️ Instalasi & Setup
 
 ### 🔧 Backend (Laravel)

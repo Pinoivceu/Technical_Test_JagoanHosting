@@ -8,6 +8,7 @@ import {
   Command,
   Frame,
   GalleryVerticalEnd,
+  Ghost,
   Map,
   PieChart,
   Settings2,
@@ -18,6 +19,7 @@ import { NavMain } from "@/components/nav-main"
 import { NavProjects } from "@/components/nav-projects"
 import { NavUser } from "@/components/nav-user"
 import { TeamSwitcher } from "@/components/team-switcher"
+import { LogOutIcon } from "lucide-react"
 import {
   Sidebar,
   SidebarContent,
@@ -25,6 +27,8 @@ import {
   SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar"
+import { Button } from "./ui/button"
+import { handleLogout } from "@/hooks/handleLogout"
 
 // This is sample data.
 const data = {
@@ -76,13 +80,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <TeamSwitcher teams={data.teams} />
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <Button onClick={handleLogout} ><LogOutIcon/> Logout</Button>
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>

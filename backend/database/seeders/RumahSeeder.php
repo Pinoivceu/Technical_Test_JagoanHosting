@@ -13,9 +13,39 @@ class RumahSeeder extends Seeder
      */
     public function run(): void
     {
-        for ($i = 1; $i <= 20; $i++) {
+
+        $usedNumbers = [
+            3,
+            7,
+            12,
+            18,
+            22,
+            27,
+            31,
+            35,
+            40,
+            44,
+            48,
+            53,
+            59,
+            62,
+            68,
+            72,
+            77,
+            81,
+            90,
+            95,
+        ];
+
+        for ($i = 0; $i < 20; $i++) {
+            do {
+                $nomor = rand(1, 100); // kamu bisa ubah range sesuai kebutuhan
+            } while (in_array($nomor, $usedNumbers));
+
+            $usedNumbers[] = $nomor;
+
             Rumah::create([
-                'nomor' => $i,
+                'nomor' => $nomor,
             ]);
         }
     }

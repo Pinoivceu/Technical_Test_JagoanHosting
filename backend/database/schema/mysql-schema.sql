@@ -129,7 +129,6 @@ CREATE TABLE `pembayaran` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `id_pembayar` bigint unsigned NOT NULL,
   `nomor_rumah` bigint unsigned DEFAULT NULL,
-  `total` int NOT NULL,
   `tanggal_pembayaran` date DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,

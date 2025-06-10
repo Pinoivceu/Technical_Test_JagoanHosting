@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             WargaSeeder::class,
             IuranSeeder::class,
             PembayaranSeeder::class,
+            PengeluaranSeeders::class,
         ]);
     }
 }

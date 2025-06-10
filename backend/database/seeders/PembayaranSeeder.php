@@ -22,8 +22,8 @@ class PembayaranSeeder extends Seeder
         $iurans = DB::table('iuran')->where('aktif', true)->get();
 
         foreach ($wargas as $warga) {
-            // Simulasikan 3 bulan terakhir membayar 2 iuran aktif
-            for ($i = 0; $i < 3; $i++) {
+            // Simulasikan pembayaran selama 12 bulan terakhir
+            for ($i = 0; $i < 12; $i++) {
                 $tanggalPembayaran = Carbon::now()->subMonths($i)->startOfMonth()->addDays(rand(1, 5));
 
                 $pembayaranId = DB::table('pembayaran')->insertGetId([

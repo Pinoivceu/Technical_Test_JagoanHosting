@@ -78,7 +78,7 @@ export function ChartAreaInteractive() {
     if (isPending) return "Loading..."
 
     if (error) return "An error has occurred: " + error.message
-
+    
     const referenceDate = new Date("2025-06-30")
     let daysToSubtract = 365
     if (timeRange === "30d") daysToSubtract = 30
@@ -99,7 +99,7 @@ export function ChartAreaInteractive() {
         <Card className="pt-0">
             <CardHeader className="flex items-center gap-2 space-y-0 border-b py-5 sm:flex-row">
                 <div className="grid flex-1 gap-1">
-                    <CardTitle>Keuangan</CardTitle>
+                    <CardTitle>Sisa Saldo</CardTitle>
                     <CardDescription>
                        Rangkuman Keuangan RT
                     </CardDescription>

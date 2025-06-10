@@ -17,13 +17,13 @@ class IuranSeeder extends Seeder
             [
                 'nama_iuran' => 'Iuran Kebersihan',
                 'frekuensi' => 'bulanan',
-                'jumlah' => 25000,
+                'jumlah' => 15000,
                 'aktif' => true,
             ],
             [
                 'nama_iuran' => 'Iuran Satpam',
                 'frekuensi' => 'bulanan',
-                'jumlah' => 50000,
+                'jumlah' => 100000,
                 'aktif' => true,
             ],
         ]);

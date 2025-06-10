@@ -13,7 +13,6 @@ export default function WargaPage() {
         queryFn: () =>
             api.get('/rumah-penghuni').then((res) => res.data),
     })
-    console.log(data)
 
     if (isPending) return 'Loading...'
 

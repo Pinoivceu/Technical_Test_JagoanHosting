@@ -1,11 +1,12 @@
 "use client"
 
 import { useState } from "react"
+import { XIcon } from "lucide-react"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import {
-    Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription
+    Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription, DialogClose
 } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -124,7 +125,8 @@ export default function AddWargaForm({ onSuccess }: AddWargaFormProps) {
             <DialogTrigger asChild>
                 <Button onClick={() => setOpen(true)}><Plus />Tambah Warga</Button>
             </DialogTrigger>
-            <DialogContent className="max-w-md w-full">
+            <DialogContent showCloseButton={false} className="max-w-md w-full">
+                <DialogClose className="items-end flex justify-end ring-offset-background focus:ring-ring data-[state=open]:bg-accent data-[state=open]:text-muted-foreground absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4" onClick={() => setOpen(false)}><XIcon /></DialogClose>
                 <DialogTitle>Tambah Warga</DialogTitle>
                 <DialogDescription>Isi data lengkap untuk menambahkan warga baru.</DialogDescription>
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-2">
@@ -165,7 +167,7 @@ export default function AddWargaForm({ onSuccess }: AddWargaFormProps) {
                             </SelectTrigger>
                             <SelectContent>
                                 {data?.map((item: { nomor: string }) => (
-                                    <SelectItem key={item.nomor} value={item.nomor}>
+                                    <SelectItem key={item.nomor} value={String(item.nomor)}>
                                         {item.nomor}
                                     </SelectItem>
                                 ))}
@@ -186,7 +188,7 @@ export default function AddWargaForm({ onSuccess }: AddWargaFormProps) {
                         <Select value={statusPerkawinan} onValueChange={(val) => setValue("statusPerkawinan", val as any)}>
                             <SelectTrigger className="w-full">
                                 <SelectValue placeholder="Pilih status perkawinan" />
-                            </SelectTrigger>                                
+                            </SelectTrigger>
 
                             <SelectContent>
                                 <SelectItem value="lajang">Lajang</SelectItem>
@@ -233,6 +235,6 @@ export default function AddWargaForm({ onSuccess }: AddWargaFormProps) {
                     <Button type="submit" className="w-full">Tambah Warga</Button>
                 </form>
             </DialogContent>
-        </Dialog>
+        </Dialog >
     )
 }

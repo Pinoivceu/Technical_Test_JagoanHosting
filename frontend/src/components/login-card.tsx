@@ -34,7 +34,6 @@ export default function LoginCard() {
             })
 
             const token = response.data.access_token
-            console.log(token)
             if (token) {
                 Cookies.set("access_token", token, { expires: 7 })
                 alert("Login berhasil!")
@@ -44,7 +43,6 @@ export default function LoginCard() {
             }
         } catch (error) {
             alert("Login gagal. Periksa email dan password Anda.")
-            console.error(error)
         }
     }
 

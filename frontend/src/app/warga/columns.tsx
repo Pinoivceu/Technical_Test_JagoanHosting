@@ -110,7 +110,7 @@ export const columns: ColumnDef<Warga>[] = [
                             <MoreHorizontal className="w-5 h-5" />
                         </button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end">
+                    <DropdownMenuContent align="start">
                         <EditWargaForm id={(data.id)} />
                         <WargaActionDelete id={(data.id)} />
                     </DropdownMenuContent>

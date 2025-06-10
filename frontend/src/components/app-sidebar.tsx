@@ -68,29 +68,7 @@ const data = {
       icon: BookOpen,
     
     },
-    {
-      title: "Pembayaran",
-      url: "/pembayaran",
-      icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
-      ],
-    },
+
   ],
 }
 

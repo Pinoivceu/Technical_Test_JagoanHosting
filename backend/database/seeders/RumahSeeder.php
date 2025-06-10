@@ -16,7 +16,6 @@ class RumahSeeder extends Seeder
         for ($i = 1; $i <= 20; $i++) {
             Rumah::create([
                 'nomor' => $i,
-                'berpenghuni' => $i <= 15 ? true : false, 
             ]);
         }
     }

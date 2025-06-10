@@ -24,14 +24,14 @@ import { useQueries } from "@tanstack/react-query"
 
 type EditWargaFormProps = {
   id?: number
+  nomorRumah: any
+  statusHunian: any
 }
 
-export default function EditWargaForm({ id }: EditWargaFormProps) {
+export default function EditPenghuniForm({ id, nomorRumah, statusHunian }: EditWargaFormProps) {
   const [nama, setNama] = useState("")
   const [jenisKelamin, setJenisKelamin] = useState("")
-  const [nomorRumah, setNomorRumah] = useState("")
   const [statusPerkawinan, setStatusPerkawinan] = useState("")
-  const [statusHunian, setStatusHunian] = useState("")
   const [noTelepon, setNoTelepon] = useState("")
   const [fotoKTP, setFotoKTP] = useState<File | null>(null)
   const [previewKTP, setPreviewKTP] = useState<string | null>(null)
@@ -73,10 +73,8 @@ export default function EditWargaForm({ id }: EditWargaFormProps) {
     if (warga) {
       setNama(warga.nama)
       setJenisKelamin(warga.jenis_kelamin)
-      setNomorRumah(String(warga.nomor_rumah)) // pastikan string
       setStatusPerkawinan(warga.status_perkawinan)
       setNoTelepon(warga.no_telepon)
-      setStatusHunian(warga.status_hunian)
       setPreviewKTP(
         warga.foto_ktp
           ? `http://localhost:8000/api/foto_ktp/${warga.foto_ktp}`
@@ -172,19 +170,6 @@ export default function EditWargaForm({ id }: EditWargaFormProps) {
             <Input id="nama" value={nama} onChange={(e) => setNama(e.target.value)} required />
           </div>
 
-          <Label htmlFor="nomor_rumah">Nomor Rumah</Label>
-          <Select onValueChange={(val) => setNomorRumah(val)} value={nomorRumah}>
-            <SelectTrigger className="w-full">
-              <SelectValue placeholder="Pilih nomor rumah" />
-            </SelectTrigger>
-            <SelectContent>
-              {rumahQuery.data?.map((item: { nomor: string }) => (
-                <SelectItem key={item.nomor} value={String(item.nomor)}>
-                  {item.nomor}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
 
           <Label htmlFor="no_telepon">No Telepon</Label>
           <Input
@@ -204,18 +189,6 @@ export default function EditWargaForm({ id }: EditWargaFormProps) {
               <SelectItem value="lajang">Lajang</SelectItem>
               <SelectItem value="menikah">Menikah</SelectItem>
               <SelectItem value="bercerai">Bercerai</SelectItem>
-            </SelectContent>
-          </Select>
-
-          <Label>Status hunian</Label>
-          <Select value={statusHunian} onValueChange={(val) => setStatusHunian(val)}>
-            <SelectTrigger className="w-full">
-              <SelectValue placeholder="Pilih status hunian" />
-            </SelectTrigger>
-
-            <SelectContent>
-              <SelectItem value="kontrak">Kontrak</SelectItem>
-              <SelectItem value="tetap">Tetap</SelectItem>
             </SelectContent>
           </Select>
 

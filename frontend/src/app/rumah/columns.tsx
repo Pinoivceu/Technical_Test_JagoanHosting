@@ -12,6 +12,7 @@ import Link from "next/link"
 // You can use a Zod schema here if you want.
 export type RumahPenghuni = {
     nomor_rumah: number
+    status_hunian: string
     status_rumah: String
     penghuni: {
         nama: string
@@ -63,8 +64,13 @@ export const columns: ColumnDef<RumahPenghuni>[] = [
     },
 
     {
+        accessorKey: "status_hunian",
+        header: "kontrak/tetap",
+    },
+
+    {
         accessorKey: "status_rumah",
-        header: "status_rumah",
+        header: "status",
     },
     {
         id: "actions",
@@ -81,17 +87,20 @@ export const columns: ColumnDef<RumahPenghuni>[] = [
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="start">
                         <div>
-                            <Button variant={"ghost"}>Tambah Penghuni</Button>
+                            <Link href={`/rumah/details/${data}`} >
+                                <Button variant={"ghost"}>Lihat Penghuni</Button>
+                            </Link>
                         </div>
                         <div>
-                            <Button variant={"ghost"}>Edit Penghuni</Button>
+                            <Link href={`/rumah/riwayat/${data}`}>
+                                <Button variant={"ghost"}>Riwayat Penghuni</Button>
+                            </Link>
                         </div>
                         <div>
-                            <Button variant={"ghost"}>Nonaktifkan Penghuni</Button>
+                            <Link href={`/rumah/pembayaran/${data}`}>
+                                <Button variant={"ghost"}>Riwayat Pembayaran</Button>
+                            </Link>
                         </div>
-                        <Link href={`/rumah/riwayat/${data}`}>
-                            <Button variant={"ghost"}>Riwayat Penghuni</Button>
-                        </Link>
                     </DropdownMenuContent>
                 </DropdownMenu>
             );

@@ -70,7 +70,7 @@ export default function AddRumahCard({ onSuccess }: { onSuccess?: () => void }) 
       </DialogTrigger>
       <DialogContent className="max-w-md w-full">
         <DialogTitle>Tambah Rumah Baru</DialogTitle>
-        <DialogDescription>Isi data rumah dengan nomor unik dan status berpenghuni.</DialogDescription>
+        <DialogDescription>Isi data rumah</DialogDescription>
 
         <form onSubmit={handleSubmit} className="space-y-4 mt-4">
           <div>
@@ -84,17 +84,7 @@ export default function AddRumahCard({ onSuccess }: { onSuccess?: () => void }) 
             />
           </div>
 
-          <div className="flex items-center space-x-2">
-            <Label htmlFor="berpenghuni">Berpenghuni</Label>
-            <Switch
-              id="berpenghuni"
-              checked={berpenghuni}
-              onCheckedChange={setBerpenghuni}
-            />
-          </div>
-
           {error && <p className="text-sm text-red-600">{error}</p>}
-
           <Button type="submit" disabled={loading} className="w-full">
             {loading ? "Menyimpan..." : "Simpan"}
           </Button>

@@ -74,10 +74,8 @@ cd ../frontend
 npm install
 ```
 
-#### 3. Atur 
 
-
-#### 4. Jalankan Next.js
+#### 3. Jalankan Next.js
 
 ```bash
 npm run dev

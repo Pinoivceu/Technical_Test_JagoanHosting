@@ -47,7 +47,7 @@ export default function LoginCard() {
     }
 
     return (
-        <Card className="w-full max-w-sm">
+        <Card className="w-full m-auto max-w-sm">
             <CardHeader>
                 <CardTitle>Login to your account</CardTitle>
                 <CardDescription>
@@ -87,17 +87,13 @@ export default function LoginCard() {
                             />
                         </div>
                     </div>
-                    <Button type="submit" className="w-full">
-                        Login
-                    </Button>
+                        <Button type="submit" className="w-full my-4">
+                            Login
+                        </Button>
+                   
                 </form>
 
             </CardContent>
-            <CardFooter className="flex-col gap-2">
-                <Button type="submit" className="w-full">
-                    Login
-                </Button>
-            </CardFooter>
         </Card >
     )
 }

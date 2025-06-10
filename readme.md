@@ -2,7 +2,7 @@
 
 ```
 
-riwayat-penghuni/
+Technical_Test_JagoanHosting
 ├── backend/        # Laravel
 └── frontend/       # Next.js
 

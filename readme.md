@@ -41,9 +41,9 @@ php artisan key:generate
 #### 4. Atur konfigurasi database di `.env`
 
 ```env
-DB_DATABASE=riwayat_db
-DB_USERNAME=root
-DB_PASSWORD=
+DB_DATABASE=DatabaseName
+DB_USERNAME=DatabaseUsername
+DB_PASSWORD=DatabasePassword
 ```
 
 #### 5. Jalankan migrasi dan seeder

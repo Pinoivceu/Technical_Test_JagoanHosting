@@ -52,7 +52,6 @@ DB_PASSWORD=
 php artisan migrate --seed
 ```
 
-Seeder akan mengisi data dummy `warga` dan `riwayat_penghuni`.
 
 #### 6. Jalankan server Laravel
 
